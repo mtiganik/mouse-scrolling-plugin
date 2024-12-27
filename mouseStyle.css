@@ -3,7 +3,7 @@ body{
 }
 
 .hi{
-    margin: 50px;
+    margin: 200px;
     padding: 30px;
     background-color: blue;
     color: aquamarine;
@@ -13,11 +13,22 @@ body{
     color: aliceblue;
 } */
 
-#mouse {
+#svgContainer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1; /* Ensure it's behind other elements */
+    width: 200px;
+    height: auto;
+    pointer-events: none; /* Prevent interaction with the mouse */
+    /* transform: translateX(0); */
+    transition: transform 0.1s ease-out;
+}
+/* #mouse {
     width: 200px;
     height: auto;
     transform-origin: center;
-}
+} */
 
 
 #body  {
