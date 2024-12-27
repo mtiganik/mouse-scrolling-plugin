@@ -2,11 +2,12 @@ body{
     background-color: black;
 }
 
-/* .hi{
+.hi{
     margin: 50px;
+    padding: 30px;
     background-color: blue;
     color: aquamarine;
-} */
+}
 
 /* #body {
     color: aliceblue;
