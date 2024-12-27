@@ -1,0 +1,8 @@
+body{
+    background-color: black;
+}
+.myDiv {
+    background-color: blueviolet;
+    margin: 30px;
+    padding:30px;
+}
