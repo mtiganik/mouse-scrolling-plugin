@@ -1,0 +1,107 @@
+body{
+    background-color: black;
+}
+
+.hi{
+    margin: 200px;
+    padding: 30px;
+
+    color: aquamarine;
+}
+
+/* #body {
+    color: aliceblue;
+} */
+
+#svgContainer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1; /* Ensure it's behind other elements */
+    width: 200px;
+    height: auto;
+    pointer-events: none; /* Prevent interaction with the mouse */
+    transform: translateX(0) scaleX(1); 
+    transition: transform 0.1s ease-out;
+}
+/* #mouse {
+    width: 200px;
+    height: auto;
+    transform-origin: center;
+} */
+
+
+#body  {
+    transform-origin: center 150px;
+}
+#face {
+    transform-origin: 30px 100px;
+}
+#tail {
+    transform-origin: 180px 110px;
+}
+
+#front-leg {
+    transform-origin: 80px 170px;
+}
+#front-sec-leg {
+    transform-origin: 60px 170px;
+}
+
+#ear {
+    transform-origin: 80px 100px;
+}
+#back-leg {
+    transform-origin: 180px 150px;
+} 
+
+@keyframes backLegMove {
+    0% { transform: rotate(0); }
+    50% { transform: rotate(-40deg); }
+    100% { transform: rotate(0); }
+}
+
+@keyframes frontLegMove {
+    0% { transform: rotate(0); }
+    50% { transform: rotate(30deg); }
+    100% { transform: rotate(0); }
+}
+
+@keyframes faceMove {
+    0% { transform: rotate(0); }
+    50% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); }
+}
+
+@keyframes earMove {
+    0% { transform: rotate(0); }
+    50% { transform: rotate(30deg); }
+    100% { transform: rotate(0); }
+}
+
+@keyframes tailMove {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bodyShrink {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(0.8); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes front2ndLeg {
+    0% {transform: rotate(0);}
+    50% {transform: rotate(20deg);}
+    100% {transform: rotate(0);}
+}
+
+
+.animate #front-sec-leg {animation: front2ndLeg 0.6s ease-in-out}
+.animate #back-leg { animation: backLegMove 0.6s ease-in-out; }
+.animate #front-leg { animation: frontLegMove 0.6s ease-in-out; }
+.animate #face { animation: faceMove 0.6s ease-in-out; }
+.animate #ear { animation: earMove 0.6s ease-in-out; }
+.animate #tail { animation: tailMove 0.6s ease-in-out; }
+.animate #body { animation: bodyShrink 0.6s ease-in-out; }

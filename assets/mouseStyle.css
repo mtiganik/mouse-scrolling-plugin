@@ -5,7 +5,7 @@ body{
 .hi{
     margin: 200px;
     padding: 30px;
-    background-color: blue;
+
     color: aquamarine;
 }
 
@@ -21,7 +21,7 @@ body{
     width: 200px;
     height: auto;
     pointer-events: none; /* Prevent interaction with the mouse */
-    /* transform: translateX(0); */
+    transform: translateX(0) scaleX(1); 
     transition: transform 0.1s ease-out;
 }
 /* #mouse {
