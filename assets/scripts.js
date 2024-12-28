@@ -1,13 +1,16 @@
-console.log("Hello world")
 
 document.addEventListener("DOMContentLoaded", ()=> {
-    fetch("mouse.svg")
-    .then(response => response.text())
-    .then(svgContent => {
-        document.getElementById("svgContainer").innerHTML = svgContent;
-        setupScrollTracking();
-    })
-    .catch(err => console.error("Failed to load Mouse SVG"))
+    const svgContainer = document.getElementById("svgContainer");
+    const svgUrl = svgContainer.getAttribute("data-svg-url");
+    console.log("script loaded")
+
+    fetch(svgUrl)
+        .then(response => response.text())
+        .then(svgContent => {
+            svgContainer.innerHTML = svgContent;
+            setupScrollTracking();
+        })
+        .catch(err => console.error("Failed to load Mouse SVG"))
 })
 
 function setupScrollTracking(){
@@ -41,24 +44,24 @@ function setupScrollTracking(){
     });
 }
 
-function setupAnimation(){
-    const mouse = document.querySelector("#svgContainer svg")
-    // const animate = decodeURIComponent
-    const animateMouseButton = document.getElementById("animateMouse");
+// function setupAnimation(){
+//     const mouse = document.querySelector("#svgContainer svg")
+//     // const animate = decodeURIComponent
+//     const animateMouseButton = document.getElementById("animateMouse");
 
-    animateMouseButton.addEventListener("click", () => {
-        mouse.classList.add("animate");
-        setTimeout(() => {
-            mouse.classList.remove("animate");
-        },600);
-    });
+//     animateMouseButton.addEventListener("click", () => {
+//         mouse.classList.add("animate");
+//         setTimeout(() => {
+//             mouse.classList.remove("animate");
+//         },600);
+//     });
 
-    document.addEventListener("keydown", (event) => {
-        if(event.code === "Space"){
-            mouse.classList.add("animate");
-            setTimeout(() => {
-                mouse.classList.remove("animate");
-            }, 600);
-        }
-    })
-}
+//     document.addEventListener("keydown", (event) => {
+//         if(event.code === "Space"){
+//             mouse.classList.add("animate");
+//             setTimeout(() => {
+//                 mouse.classList.remove("animate");
+//             }, 600);
+//         }
+//     })
+// }
