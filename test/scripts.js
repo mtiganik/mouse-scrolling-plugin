@@ -41,24 +41,3 @@ function setupScrollTracking(){
     });
 }
 
-function setupAnimation(){
-    const mouse = document.querySelector("#svgContainer svg")
-    // const animate = decodeURIComponent
-    const animateMouseButton = document.getElementById("animateMouse");
-
-    animateMouseButton.addEventListener("click", () => {
-        mouse.classList.add("animate");
-        setTimeout(() => {
-            mouse.classList.remove("animate");
-        },600);
-    });
-
-    document.addEventListener("keydown", (event) => {
-        if(event.code === "Space"){
-            mouse.classList.add("animate");
-            setTimeout(() => {
-                mouse.classList.remove("animate");
-            }, 600);
-        }
-    })
-}
