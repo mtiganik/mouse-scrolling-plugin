@@ -1,13 +1,19 @@
 
 document.addEventListener("DOMContentLoaded", ()=> {
     const svgContainer = document.getElementById("svgContainer");
-    const svgUrl = svgContainer.getAttribute("data-svg-url");
-    console.log("script loaded")
+    const svgUrl = svgContainer?.getAttribute("data-svg-url");
 
+    if(!svgContainer || !svgUrl) return;
     fetch(svgUrl)
         .then(response => response.text())
         .then(svgContent => {
             svgContainer.innerHTML = svgContent;
+
+            const paths = svgContainer.querySelectorAll("path")
+            paths.forEach(path => {
+                path.style.fill = MousePluginSettings.color;
+            })
+
             setupScrollTracking();
         })
         .catch(err => console.error("Failed to load Mouse SVG"))
